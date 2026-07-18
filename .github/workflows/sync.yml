@@ -21,4 +21,4 @@ jobs:
           DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
         # Cambia la ruta por la que anotaste en el Paso 3
         run: |
-          databricks repos update /Workspace/Users/jhon.liviasc@unmsm.edu.pe/databricks-test --branch main
+          databricks repos update /Users/jhon.liviasc@unmsm.edu.pe/databricks-test --branch main
