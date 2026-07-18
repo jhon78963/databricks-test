@@ -1,0 +1,24 @@
+name: Sincronizar con Databricks
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v3
+
+      - name: Instalar Databricks CLI
+        uses: databricks/setup-cli@main
+
+      - name: Actualizar Git Folder en Databricks
+        env:
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
+          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
+        # Cambia la ruta por la que anotaste en el Paso 3
+        run: |
+          databricks repos update /Workspace/Users/tu_correo@dominio.com/databricks-test --branch main
