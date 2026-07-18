@@ -1,0 +1,1 @@
+print("¡Hola desde GitHub Actions! El código se sincronizó correctamente.")
